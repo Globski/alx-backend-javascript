@@ -65,16 +65,10 @@ At the end of this project, you should be able to:
    npm -v     # should output 6.11.3
    ```
 
-2. **Install Dependencies Jest, Babel, and ESLint**:
-   - In your project directory, create a `package.json` file and run:
-     ```bash
-     npm install
-     ```
-
-### Configuration Files
-
-Add the following configuration files to your project directory:
-
+2. **Configuration Files**:
+   - In your project directory, create a `package.json`, `babel.config.js` and `.eslintrc.js` file
+   - Add the following configuration files to your project directory:
+ 
 - `package.json`
 ```
 
@@ -151,7 +145,11 @@ module.exports = {
   ]
 };
 ```
-
+3. **Install Dependencies Jest, Babel, and ESLint**:
+   - run:
+     ```bash
+     npm install
+     ```
 ## Tasks
 
 0. **Const or let?**
