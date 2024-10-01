@@ -160,19 +160,39 @@ module.exports = {
      npm install
      ```
 
-### Configuring Jest
-
-- **Jest** is included in your `devDependencies`, and its configuration is done via the scripts in `package.json`. 
-- You can run your tests using:
-  ```bash
-  npm test
-  ```
-  This command will trigger Jest to find and execute all your test files that match the `.test.js` or `.spec.js` naming conventions.
-
+ **Run individual scripts with Babel using the dev command:**
 - If you want to run a specific test file, use:
   ```bash
-  npm run test <filename>
+  npm run dev <filename> 
   ```
+
+#### To check your JavaScript files for ESLint errors, follow these steps:
+
+
+
+1. **Run ESLint**:
+   You can run ESLint on your specific files or directories. Use the command:
+   ```bash
+   npm run lint
+   ```
+   If you want to check specific files, you can do:
+   ```bash
+   ./node_modules/.bin/eslint <filename>
+   ```
+   Replace `<filename>` with the path to your JavaScript file.
+
+2. **Review Errors and Warnings**:
+   ESLint will output any errors or warnings it finds in your code. The output will typically include the line number and the specific rule that was violated.
+
+3. **Fix Issues**:
+   Go through the reported issues and fix them in your code. ESLint may suggest specific changes based on the rules defined in your `.eslintrc.js` file.
+
+4. **Optional: Auto-fix**:
+   ESLint has an auto-fix feature for certain issues. You can run:
+   ```bash
+   ./node_modules/.bin/eslint <filename> --fix
+   ```
+   This will automatically fix some of the issues it can resolve.
 
 ## Tasks
 
