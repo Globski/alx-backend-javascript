@@ -160,18 +160,9 @@ module.exports = {
      npm install
      ```
 
-### Configuring Jest
-
-- **Jest** is included in your `devDependencies`, and its configuration is done via the scripts in `package.json`. 
-- You can run your tests using:
-  ```bash
-  npm test
-  ```
-  This command will trigger Jest to find and execute all your test files that match the `.test.js` or `.spec.js` naming conventions.
-
+ **Run individual scripts with Babel using the dev command:**
 - If you want to run a specific test file, use:
   ```bash
-  npm run test <filename>
   npm run dev <filename> 
   ```
 
