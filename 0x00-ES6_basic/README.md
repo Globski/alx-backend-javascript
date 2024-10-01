@@ -260,7 +260,7 @@ npm test
 Or to run a specific test file:
 
 ```bash
-npm run dev 0-constants.test.js
+npm run test 0-constants.test.js
 ```
 **Execution:**
 ```javascript
