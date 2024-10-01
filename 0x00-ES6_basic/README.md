@@ -172,6 +172,7 @@ module.exports = {
 - If you want to run a specific test file, use:
   ```bash
   npm run test <filename>
+  npm run dev <filename> 
   ```
 
 ## Tasks
