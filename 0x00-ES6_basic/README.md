@@ -50,6 +50,7 @@ At the end of this project, you should be able to:
 - Work with iterators and `for-of` loops.
 
 ## How to Use
+
 1. Install Node.js and required dependencies.
 2. Clone the repository and navigate to the project directory.
 3. Run tests using `npm run dev <filename>`.
@@ -66,58 +67,65 @@ At the end of this project, you should be able to:
    ```
 
 2. **Configuration Files**:
-   - In your project directory, create a `package.json`, `babel.config.js` and `.eslintrc.js` file
+   - In your project directory, create a `package.json`, `babel.config.js`, and `.eslintrc.js` file.
    - Add the following configuration files to your project directory:
- 
-- `package.json`
-```
 
+#### `package.json`
+This file manages your project dependencies and scripts.
+
+```json
 {
   "scripts": {
-    "lint": "./node_modules/.bin/eslint",
-    "check-lint": "lint [0-9]*.js",
-    "dev": "npx babel-node",
-    "test": "jest",
-    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
+    "lint": "./node_modules/.bin/eslint",           // Lint your JavaScript files
+    "check-lint": "lint [0-9]*.js",                 // Check linting for task files
+    "dev": "npx babel-node",                         // Run your code with Babel
+    "test": "jest",                                  // Run your tests using Jest
+    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest" // Run both linting and tests
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.8.0",
-    "@babel/preset-env": "^7.6.0",
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.17.0",
-    "jest": "^24.9.0"
+    "@babel/core": "^7.6.0",                        // Babel core library
+    "@babel/node": "^7.8.0",                        // Babel Node for running scripts
+    "@babel/preset-env": "^7.6.0",                  // Preset for compiling ES6+ to ES5
+    "eslint": "^6.4.0",                             // Linting tool
+    "eslint-config-airbnb-base": "^14.0.0",        // Airbnb JavaScript style guide
+    "eslint-plugin-import": "^2.18.2",              // ESLint plugin for import/export syntax
+    "eslint-plugin-jest": "^22.17.0",               // ESLint plugin for Jest
+    "jest": "^24.9.0"                               // Jest testing framework
   }
 }
 ```
-- `babel.config.js`
-```
+
+#### `babel.config.js`
+This file configures Babel to transpile your JavaScript code.
+
+```javascript
 module.exports = {
   presets: [
     [
       '@babel/preset-env',
       {
         targets: {
-          node: 'current',
+          node: 'current',                         // Target the current version of Node.js
         },
       },
     ],
   ],
 };
 ```
-- `.eslintrc.js`
-```
+
+#### `.eslintrc.js`
+This file configures ESLint rules for your project.
+
+```javascript
 module.exports = {
   env: {
     browser: false,
     es6: true,
-    jest: true,
+    jest: true,                                  // Enable Jest globals
   },
   extends: [
-    'airbnb-base',
-    'plugin:jest/all',
+    'airbnb-base',                               // Use Airbnb's base ESLint rules
+    'plugin:jest/all',                          // Enable all Jest rules
   ],
   globals: {
     Atomics: 'readonly',
@@ -125,12 +133,12 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module',                        // Use ES modules
   },
-  plugins: ['jest'],
+  plugins: ['jest'],                            // Add Jest plugin for ESLint
   rules: {
-    'no-console': 'off',
-    'no-shadow': 'off',
+    'no-console': 'off',                         // Allow console statements
+    'no-shadow': 'off',                          // Disable shadowing variable rule
     'no-restricted-syntax': [
       'error',
       'LabeledStatement',
@@ -140,16 +148,32 @@ module.exports = {
   overrides:[
     {
       files: ['*.js'],
-      excludedFiles: 'babel.config.js',
+      excludedFiles: 'babel.config.js',         // Exclude Babel config from ESLint
     }
   ]
 };
 ```
-3. **Install Dependencies Jest, Babel, and ESLint**:
-   - run:
+
+3. **Install Dependencies (Jest, Babel, and ESLint)**:
+   - Run the following command to install all the necessary packages:
      ```bash
      npm install
      ```
+
+### Configuring Jest
+
+- **Jest** is included in your `devDependencies`, and its configuration is done via the scripts in `package.json`. 
+- You can run your tests using:
+  ```bash
+  npm test
+  ```
+  This command will trigger Jest to find and execute all your test files that match the `.test.js` or `.spec.js` naming conventions.
+
+- If you want to run a specific test file, use:
+  ```bash
+  npm run test <filename>
+  ```
+
 ## Tasks
 
 0. **Const or let?**
