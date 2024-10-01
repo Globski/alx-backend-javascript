@@ -1,5 +1,11 @@
 # Alx Backend Javascript - ES6 Basics
 
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Node.js](https://img.shields.io/badge/Node.js-v12.11.1-brightgreen)](https://nodejs.org/)
+[![Babel](https://img.shields.io/badge/Babel-v7.6.0-blue)](https://babeljs.io/)
+[![Jest](https://img.shields.io/badge/Jest-v24.9.0-red)](https://jestjs.io/)
+[![ESLint](https://img.shields.io/badge/ESLint-v6.4.0-lightgray)](https://eslint.org/)
+[![Backend Development](https://img.shields.io/badge/Backend%20Development-Node.js%20%2B%20ES6-orange)](https://www.backend-development.com/)
 ## Description
 
 This project focuses on understanding and implementing the core features of ES6 (ECMAScript 2015) in JavaScript. By the end of this project, you will be able to confidently explain and utilize new features introduced in ES6, such as arrow functions, template literals, and the rest/spread syntax. You'll also understand their applications in modern JavaScript development.
@@ -168,8 +174,6 @@ module.exports = {
 
 #### To check your JavaScript files for ESLint errors, follow these steps:
 
-
-
 1. **Run ESLint**:
    You can run ESLint on your specific files or directories. Use the command:
    ```bash
@@ -193,6 +197,92 @@ module.exports = {
    ./node_modules/.bin/eslint <filename> --fix
    ```
    This will automatically fix some of the issues it can resolve.
+
+#### To Test Your Functions with Jest, Follow These Steps:
+#### 1: Create a Test File for Task 0
+
+Create a test file named `0-constants.test.js` in the same directory as `0-constants.js`:
+
+```bash
+touch 0-constants.test.js
+```
+
+##### Example `0-constants.js`
+```javascript
+// 0-constants.js
+
+export function taskFirst() {
+  const task = 'I prefer const when I can.';
+  return task;
+}
+
+export function getLast() {
+  return ' is okay';
+}
+
+export function taskNext() {
+  let combination = 'But sometimes let';
+  combination += getLast();
+  return combination;
+}
+```
+
+##### Example `0-constants.test.js`
+Here’s how you would write tests for the functions in `0-constants.js`:
+
+```javascript
+// 0-constants.test.js
+import { taskFirst, getLast, taskNext } from './0-constants';
+
+describe('Testing Task Functions', () => {
+  test('taskFirst should return the correct string', () => {
+    expect(taskFirst()).toBe('I prefer const when I can.');
+  });
+
+  test('getLast should return the correct string', () => {
+    expect(getLast()).toBe(' is okay');
+  });
+
+  test('taskNext should return the correct concatenated string', () => {
+    expect(taskNext()).toBe('But sometimes let is okay');
+  });
+});
+```
+
+#### Step 5: Run the Tests
+
+To run your tests, you can execute:
+
+```bash
+npm test
+```
+
+Or to run a specific test file:
+
+```bash
+npm run dev 0-constants.test.js
+```
+**Execution:**
+```javascript
+root@a9ebf5c20f06:~/alx-backend-javascript/0x00-ES6_basic# touch 0-constants.test.js
+root@a9ebf5c20f06:~/alx-backend-javascript/0x00-ES6_basic# vi 0-constants.test.js
+root@a9ebf5c20f06:~/alx-backend-javascript/0x00-ES6_basic# npm test
+
+> @ test /root/alx-backend-javascript/0x00-ES6_basic
+> jest
+
+ PASS  ./0-constants.test.js (15.001s)
+  Testing Task Functions
+    ✓ taskFirst should return the correct string (90ms)
+    ✓ getLast should return the correct string
+    ✓ taskNext should return the correct concatenated string
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        23.203s
+Ran all test suites.
+```
 
 ## Tasks
 
@@ -720,6 +810,7 @@ bob@dylan:~$ npm run dev 101-main.js
 Bob | Jane | Sylvie
 bob@dylan:~$
 ```
+
 ## Additional Notes
 
 1. Don't forget to run `npm install` from the terminal of your project folder to install all necessary project dependencies.
