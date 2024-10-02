@@ -171,25 +171,41 @@ export function createUser() {
 ### **4. `.eslintrc.js`**
 This file configures ESLint to identify and fix problems in your JavaScript code:
 ```javascript
+// This configuration file is for ESLint, a tool that helps identify and fix problems in JavaScript code.
 module.exports = {
   env: {
-    browser: false,              // Code is not intended for the browser
+    browser: false,              // Code is not intended for the browser environment
     es6: true,                   // Enables ES6 syntax
     jest: true,                  // Enable Jest global variables for testing
   },
   extends: [
-    'airbnb-base',               // Use Airbnb's base ESLint rules
-    'plugin:jest/all',           // Enable all Jest rules for testing
+    'airbnb-base',               // Use Airbnb's base ESLint rules for consistency
+    'plugin:jest/all',           // Enable all Jest rules for comprehensive testing support
   ],
+  globals: {
+    Atomics: 'readonly',         // Prevents Atomics from being modified
+    SharedArrayBuffer: 'readonly', // Prevents SharedArrayBuffer from being modified
+  },
   parserOptions: {
-    ecmaVersion: 2018,           // Specify ECMAScript version
-    sourceType: 'module',        // Use ES modules
+    ecmaVersion: 2018,           // Specify ECMAScript version to use
+    sourceType: 'module',        // Use ES modules for import/export syntax
   },
-  plugins: ['jest'],            // Include Jest plugin for ESLint
+  plugins: ['jest'],            // Include the Jest plugin for additional rules related to testing
   rules: {
-    'no-console': 'off',         // Allow console statements
-    'no-shadow': 'off',          // Disable shadowing variable rule
+    'no-console': 'off',         // Allow console statements (useful for debugging)
+    'no-shadow': 'off',          // Disable the rule that disallows variable shadowing
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',        // Disallow labeled statements to improve readability
+      'WithStatement',           // Disallow with statements to avoid scope confusion
+    ],
   },
+  overrides: [
+    {
+      files: ['*.js'],           // Apply these settings to all JavaScript files
+      excludedFiles: 'babel.config.js', // Exclude Babel configuration from these rules
+    }
+  ]
 };
 ```
 - **Lint your code**:
