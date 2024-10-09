@@ -90,22 +90,28 @@ npm -v    # Outputs the installed npm version
 ```
 
 ## 4. Install Project Dependencies
-After navigating to the project directory, install the necessary dependencies by running:
+To set up your project for JavaScript development, you'll need to create some essential configuration files and install the necessary dependencies. After navigating to the project directory, Create a `package.json`, `babel.config.js`, `utils.js`, and `.eslintrc.js` file. 
+- **`babel.config.js`**: This file is used for configuring Babel, a tool that lets you use the latest JavaScript features. Create this file and add your configuration.
+- **`.eslintrc.js`**: This file configures ESLint, a tool that helps you write consistent and error-free code. Again, create this file and specify your ESLint settings.
+- **`utils.js`**: This is where you can write utility functions that can be reused throughout your project.
+- Now that you have your configuration files set up, you can install the necessary libraries and tools. Run the following command:
 ```bash
 npm install
 ```
 This command reads the `package.json` file to download and install all the required packages for the project.
 
-## 5. Running Tasks
-You can execute specific task files using the following command:
+## 5. Run individual scripts with Babel using the dev command:
+- If you want to run a specific test file, use:
 ```bash
 npm run dev <task-number>-main.js
 ```
 Replace `<task-number>` with the number corresponding to the task you want to run (e.g., `0`, `1`, etc.).
-
+  
 ---
 
 ## Configuration Files
+   - Create a `package.json`, `babel.config.js`, `utils.js`, and `.eslintrc.js` file in your project directory.
+   - Add the following configuration files to your project directory:
 
 ### **1. `package.json`**
 This file manages project dependencies and scripts. Here’s a breakdown:
@@ -247,20 +253,46 @@ handleProfileSignup('John', 'Doe', 'john_doe.jpg')
 
 ---
 
-## Running Tests
+## To check your JavaScript files for ESLint errors, follow these steps:
 
-Make sure your test files are named according to the pattern `[0-9]*.test.js` for Jest to recognize them. To run all tests, execute:
+1. **Run ESLint**:
+   You can run ESLint on your specific files or directories. Use the command:
+   ```bash
+   npm run lint
+   ```
+   If you want to check specific files, you can do:
+   ```bash
+   ./node_modules/.bin/eslint <filename>
+   ```
+   Replace `<filename>` with the path to your JavaScript file.
+
+2. **Review Errors and Warnings**:
+   ESLint will output any errors or warnings it finds in your code. The output will typically include the line number and the specific rule that was violated.
+
+3. **Fix Issues**:
+   Go through the reported issues and fix them in your code. ESLint may suggest specific changes based on the rules defined in your `.eslintrc.js` file.
+
+4. **Optional: Auto-fix**:
+   ESLint has an auto-fix feature for certain issues. You can run:
+   ```bash
+   ./node_modules/.bin/eslint <filename> --fix
+   ```
+   This will automatically fix some of the issues it can resolve.
+
+
+## To Test Your Functions with Jest, Follow These Steps:
+Create a test file named `3-all.test.js` in the same directory as `3-all.js`:
+
 ```bash
-npm run test
-```
-To run a specific test file:
-```bash
-npm run test <test-file-name>
+touch 3-all.test.js
 ```
 
-### Example of a Test File
-Create a test file named `3-all.test.js` for the `handleProfileSignup` function:
+##### Example `3-all.test.js`
+Create a test file named `3-all.test.js` for the `handleProfileSignup` function
+- Here’s how you would write tests for the functions in `3-all.js`:
+
 ```javascript
+// 3-all.test.js
 import handleProfileSignup from './3-all';
 
 describe('handleProfileSignup', () => {
@@ -275,22 +307,24 @@ describe('handleProfileSignup', () => {
 });
 ```
 
+#### Run the Tests
+
+Make sure your test files are named according to the pattern `[0-9]*.test.js` for Jest to recognize them. To run all tests, execute:
+```bash
+npm run test
+```
+
+Or to run a specific test file:
+
+```bash
+npm run test <test-file-name>
+```
+
+**Execution:**
+```javascript
+
+```
 ---
-
-## Linting Your Code
-
-To ensure your code adheres to style guidelines, run:
-```bash
-npm run lint
-```
-You can also automatically fix some linting issues by running:
-```bash
-npm run lint -- --fix
-```
-
-### Reviewing Linting Errors
-When you run the lint command, ESLint will output any errors or warnings it finds, including line numbers and the specific rule violated. Review these and make necessary adjustments in your code.
-
 
 ## Tasks
 
@@ -416,7 +450,7 @@ When you run the lint command, ESLint will output any errors or warnings it find
     firstName: value,
     lastName: value,
     }
-   ```
+    ```
 - **Example**:
   ```javascript
   bob@dylan:~$ cat 4-main.js
@@ -635,3 +669,15 @@ If one of the async function fails, return an empty object. Example:
     user: { firstName: 'Guillaume', lastName: 'Salva' }
   }
   ```
+## Additional Notes
+A **Promise** in JavaScript is an object that helps you manage asynchronous operations. When you perform an action that takes time—like fetching data from a server—JavaScript doesn’t wait for that action to complete. Instead, it continues executing the rest of your code. A Promise allows you to handle the result of that action later, once it’s finished.
+
+A Promise can be in one of three states:
+
+1. **Pending**: The initial state, meaning the operation is still ongoing.
+2. **Fulfilled**: The operation completed successfully, and the Promise now has a result.
+3. **Rejected**: The operation failed, and the Promise has a reason for the failure (usually an error).
+
+You can attach functions to handle these outcomes using the `.then()` and `.catch()` methods. The `.then()` method runs when the Promise is fulfilled, allowing you to work with the result. The `.catch()` method runs if the Promise is rejected, letting you handle errors.
+
+For example, when you request data from an API, you can use a Promise to wait for the response. This keeps your code cleaner and more organized, avoiding the "callback hell" that can happen with nested functions. Overall, Promises make working with asynchronous code easier and more manageable.
