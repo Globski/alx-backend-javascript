@@ -74,7 +74,7 @@ git clone https://github.com/your-username/alx-backend-javascript.git
 Change your working directory to the specific project folder:
 
 ```bash
-cd alx-backend-javascript/0x01-ES6_promise
+cd alx-backend-javascript/0x03-ES6_data_manipulation
 ```
 
 ### 3. Install Node.js
