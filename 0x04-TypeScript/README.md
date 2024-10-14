@@ -7,6 +7,7 @@
 [![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=white)](https://jestjs.io/)
 [![Babel](https://img.shields.io/badge/Babel-F9DC3E?logo=babel&logoColor=black)](https://babeljs.io/)
 [![Backend Development](https://img.shields.io/badge/Backend%20Development-Node.js%20%2B%20ES6-orange)](https://www.backend-development.com/)
+[![ESLint](https://img.shields.io/badge/ESLint-brightgreen?logo=eslint&logoColor=white)](https://eslint.org/)
 
 ## Description
 
@@ -264,6 +265,23 @@ describe('Example Test', () => {
 ```bash
 npm test  # This will execute all test files matching *.test.ts
 ```
+## Additional Notes
+- Ensure that you have Node.js installed to manage dependencies and run scripts.
+
+### What is TypeScript?
+
+TypeScript is a superset of JavaScript that adds static types. It helps catch errors early through a type system and makes JavaScript development more efficient. TypeScript provides:
+
+- **Type Safety**: Prevents errors by enforcing types.
+- **Better Tooling**: Enhanced editor support with autocompletion and refactoring.
+- **Object-Oriented Features**: Supports classes, interfaces, and inheritance.
+- **Interoperability**: Can be used alongside existing JavaScript code.
+
+### Key Benefits for Beginners
+
+- **Error Detection**: Helps identify bugs at compile time rather than runtime.
+- **Clearer Code**: Makes your code more understandable and maintainable.
+- **Improved Collaboration**: Type definitions provide better context when working in teams.
 
 ## Tasks
 
@@ -519,7 +537,3 @@ npm test  # This will execute all test files matching *.test.ts
         const minor: MinorCredits = { credits: 5 };
         const totalCredits = sumCredits(major, minor); // 15
         ```
-
-## Additional Notes
-
-- Ensure that you have Node.js installed to manage dependencies and run scripts.
