@@ -11,7 +11,7 @@
 
 ## Description
 
-This project introduces the core features of TypeScript, such as basic types, interfaces, classes, and advanced types. Through a series of tasks, you'll gradually deepen your understanding of TypeScript, starting with simple type definitions and interfaces, then progressing to advanced topics like namespaces. By the end, you’ll have developed a TypeScript application that models students and teachers, efficiently managing types and extending their functionalities. The project serves as a hands-on introduction to static typing and object-oriented programming, demonstrating how TypeScript can improve web development by catching errors early and seamlessly compiling to JavaScript, making it compatible with browsers, servers, and any JavaScript environment.
+This project introduces you to the core features of TypeScript, including basic types, interfaces, classes, and advanced types. Through a series of tasks, you'll gradually deepen your understanding of TypeScript, starting with simple type definitions and interfaces, and progressing to advanced topics such as namespaces. By the end, you’ll have developed a TypeScript application that models students and teachers, efficiently managing types and extending their functionalities. The project serves as a hands-on introduction to static typing and object-oriented programming and demonstrates how TypeScript can improve web development by catching errors early and seamlessly compiling to JavaScript, making it compatible with browsers, servers, and any JavaScript environment.
 
 ## Project Structure
 | Task Number | Description | Source Code |
