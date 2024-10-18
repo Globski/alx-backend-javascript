@@ -8,7 +8,7 @@
 
 ## Description
 
-This project focuses on understanding and implementing ES6 classes in JavaScript. The project includes several tasks that demonstrate the usage of classes, inheritance, getters/setters, and other object-oriented programming concepts.
+This project focuses on understanding and implementing ES6 classes in JavaScript. It includes several tasks that demonstrate the use of important object-oriented programming concepts such as classes, inheritance, and getters/setters.
 
 ## Project Structure
 
@@ -345,6 +345,12 @@ npm run test 0-classroom.test.js
 ```javascript
 
 ```
+
+## Additional Notes
+
+- **Classes**: Learning how to define and use classes, which serve as blueprints for creating objects.
+- **Inheritance**: Understanding how to create class hierarchies, where one class can inherit properties and methods from another.
+- **Getters/Setters**: Practicing how to define custom methods to control how properties are accessed or modified in your classes.
 
 ## Tasks
 
