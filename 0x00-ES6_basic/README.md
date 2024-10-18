@@ -8,7 +8,7 @@
 [![Backend Development](https://img.shields.io/badge/Backend%20Development-Node.js%20%2B%20ES6-orange)](https://www.backend-development.com/)
 ## Description
 
-This project focuses on understanding and implementing the core features of ES6 (ECMAScript 2015) in JavaScript. By the end of this project, you will be able to confidently explain and utilize new features introduced in ES6, such as arrow functions, template literals, and the rest/spread syntax. You'll also understand their applications in modern JavaScript development.
+This project focuses on understanding and implementing the key features of ES6 (also known as ECMAScript 2015) in JavaScript. By the end of this project, you'll be able to clearly explain and make use of important new features that were introduced in ES6. These include arrow functions, template literals, and the rest/spread syntax. You'll also understand how these features are used in modern JavaScript development.
 
 ## Project Structure
 
