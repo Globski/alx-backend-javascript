@@ -266,7 +266,7 @@ describe('Example Test', () => {
 npm test  # This will execute all test files matching *.test.ts
 ```
 
-### 3. Running TypeScript with ts-node (Optional)
+### Running TypeScript with ts-node (Optional)
 
 If you want to run TypeScript files directly without compiling them first, you can use `ts-node`. It allows you to execute TypeScript code on the fly, which is helpful for quick testing and development:
 
