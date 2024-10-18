@@ -16,18 +16,18 @@ This project introduces the core features of TypeScript, such as basic types, in
 ## Project Structure
 | Task Number | Description | Source Code |
 |-------------|-------------|-------------|
-| 0           | Creating an interface for a student. | [task_0/main.ts](task_0/main.ts) |
-| 1           | Let's build a Teacher interface. | [task_1/main.ts](task_1/main.ts) |
-| 2           | Extending the Teacher class. | [task_1/main.ts](task_1/main.ts) |
-| 3           | Printing teachers. | [task_3/main.ts](task_3/main.ts) |
-| 4           | Writing a class for students. | [task_4/main.ts](task_4/main.ts) |
-| 5           | Advanced types Part 1. | [task_5/main.ts](task_5/main.ts) |
-| 6           | Creating functions specific to employees. | [task_6/main.ts](task_6/main.ts) |
-| 7           | String literal types. | [task_7/main.ts](task_7/main.ts) |
-| 8           | Ambient Namespaces. | [task_8/main.ts](task_8/main.ts) |
-| 9           | Namespace & Declaration merging. | [task_9/main.ts](task_9/main.ts) |
-| 10          | Update Main with subjects. | [task_10/main.ts](task_10/main.ts) |
-| 11          | Brand Convention & Nominal Typing. | [task_11/main.ts](task_11/main.ts) |
+| 0           | Creating an interface for a student. | [task_0/js/main.ts](task_0/js/main.ts) |
+| 1           | Let's build a Teacher interface. | [task_1/js/main.ts](task_1/js/main.ts) |
+| 2           | Extending the Teacher class. | [task_1/js/main.ts](task_1/js/main.ts) |
+| 3           | Printing teachers. | [task_1/js/main.ts](task_1/js/main.ts) |
+| 4           | Writing a class for students. | [task_1/js/main.ts](task_1/js/main.ts) |
+| 5           | Advanced types Part 1. | [task_2/main.ts](task_2/main.ts) |
+| 6           | Creating functions specific to employees. | [task_2/main.ts](task_2/main.ts) |
+| 7           | String literal types. | [task_2/js/main.ts](task_2/js/main.ts) |
+| 8           | Ambient Namespaces. | [task_3/js/main.ts](task_3/main.ts) |
+| 9           | Namespace & Declaration merging. | [task_4/js/main.ts](task_4/js/main.ts) |
+| 10          | Update Main with subjects. | [task_4/js/main.ts](task_4/js/main.ts) |
+| 11          | Brand Convention & Nominal Typing. | [task_5/js/main.ts](task_5/js/main.ts) |
 
 
 ## Environment
