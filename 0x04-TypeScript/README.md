@@ -265,8 +265,24 @@ describe('Example Test', () => {
 ```bash
 npm test  # This will execute all test files matching *.test.ts
 ```
-## Additional Notes
+
+### 3. Running TypeScript with ts-node (Optional)
+
+If you want to run TypeScript files directly without compiling them first, you can use `ts-node`. It allows you to execute TypeScript code on the fly, which is helpful for quick testing and development:
+
+1. Install `ts-node` globally (if you haven't already):
+   ```bash
+   npm install -g ts-node
+   ```
+
+2. Run your TypeScript file:
+   ```bash
+   ts-node main.ts  # Replace main.ts with your specific TypeScript file
+   ```
+
 - Ensure that you have Node.js installed to manage dependencies and run scripts.
+
+## Additional Notes
 
 ### What is TypeScript?
 
