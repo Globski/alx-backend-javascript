@@ -301,255 +301,477 @@ TypeScript is a superset of JavaScript that adds static types. It helps catch er
 
 ## Tasks
 
-0. Creating an interface for a student
-   - Copy the following configuration files (provided above) into the task_0 directory: package.json, .eslintrc.js, tsconfig.json, webpack.config.js
-   - Write your code in the main.ts file:
-     - Write an interface named Student that accepts the following elements: firstName(string), lastName(string), age(number), and location(string).
-     - Create two students, and create an array named studentsList containing the two variables.
-     - Using Vanilla Javascript, render a table and for each element in the array, append a new row to the table. Each row should contain the first name of the student and the location.
-   - Requirements:
-     - When running, Webpack should return No type errors found.
-     - Every variable should use TypeScript when possible.
+## 0: Creating an interface for a student
 
-1. Let's build a Teacher interface
-   - Create a directory task_1 and copy these configuration files into this folder: package.json, tsconfig.json, webpack.config.js
-   - Create an interface named Teacher with the following attributes:
-     - firstName(string) and lastName(string). These two attributes should only be modifiable when a Teacher is first initialized.
-     - fullTimeEmployee(boolean) this attribute should always be defined.
-     - yearsOfExperience(number) this attribute is optional.
-     - location(string) this attribute should always be defined.
-   - Add the possibility to add any attribute to the Object like contract(boolean) without specifying the name of the attribute.
-     - Example:
-       ```typescript
-       const teacher3: Teacher = {
-         firstName: 'John',
-         fullTimeEmployee: false,
-         lastName: 'Doe',
-         location: 'London',
-         contract: false,
-       };
-       console.log(teacher3);
-       ```
+**Mandatory:**
 
-2. Extending the Teacher class
-   - Write an interface named Directors that extends Teacher. It requires an attribute named numberOfReports(number).
-     - Example:
-       ```typescript
-       const director1: Directors = {
-         firstName: 'John',
-         lastName: 'Doe',
-         location: 'London',
-         fullTimeEmployee: true,
-         numberOfReports: 17,
-       };
-       console.log(director1);
-       ```
+1. Copy the following configuration files (provided above) into the `task_0` directory:
+   - `package.json`
+   - `.eslintrc.js`
+   - `tsconfig.json`
+   - `webpack.config.js`
 
-3. Printing teachers
-   - Write a function printTeacher:
-     - It accepts two arguments firstName and lastName.
-     - It returns the first letter of the firstName and the full lastName.
-     - Example: printTeacher("John", "Doe") -> J. Doe
-   - Write an interface for the function named printTeacherFunction.
+2. Write your code in the `main.ts` file:
+   - Write an interface named `Student` that accepts the following elements: 
+     - `firstName` (string)
+     - `lastName` (string)
+     - `age` (number)
+     - `location` (string)
+   - Create two students, and create an array named `studentsList` containing the two variables.
+   - Using Vanilla Javascript, render a table and for each element in the array, append a new row to the table. Each row should contain the first name of the student and the location.
 
-4. Writing a class
-   - Write a Class named StudentClass:
-     - The constructor accepts firstName(string) and lastName(string) arguments.
-     - The class has a method named workOnHomework that returns the string Currently working.
-     - The class has a method named displayName that returns the firstName of the student.
-     - The constructor of the class should be described through an Interface.
-     - The class should be described through an Interface.
-   - Requirements:
-     - You can reuse the Webpack configuration from the previous exercise to compile the code.
-     - When running npm run build, no TypeScript error should be displayed.
-     - Every variable should use TypeScript when possible.
+**Requirements:**
 
-5. Advanced types Part 1
-   - Create the DirectorInterface interface with the 3 expected methods:
-     - workFromHome() returning a string.
-     - getCoffeeBreak() returning a string.
-     - workDirectorTasks() returning a string.
-   - Create the TeacherInterface interface with the 3 expected methods:
-     - workFromHome() returning a string.
-     - getCoffeeBreak() returning a string.
-     - workTeacherTasks() returning a string.
-   - Create a class Director that will implement DirectorInterface.
-     - workFromHome should return the string Working from home.
-     - getCoffeeBreak should return the string Getting a coffee break.
-     - workDirectorTasks should return the string Getting to director tasks.
-   - Create a class Teacher that will implement TeacherInterface.
-     - workFromHome should return the string Cannot work from home.
-     - getCoffeeBreak should return the string Cannot have a break.
-     - workTeacherTasks should return the string Getting to work.
-   - Create a function createEmployee with the following requirements:
-     - It can return either a Director or a Teacher instance.
-     - It accepts 1 argument:
-       - salary (either number or string).
-       - If salary is a number and less than 500 - It should return a new Teacher. Otherwise, it should return a Director.
-     - Expected result:
-       ```typescript
-       console.log(createEmployee(200)); // Teacher
-       console.log(createEmployee(1000)); // Director
-       console.log(createEmployee('$500')); // Director
-       ```
+- When running, Webpack should return "No type errors found."
+- Every variable should use TypeScript when possible.
 
-6. Creating functions specific to employees
-   - Write a function isDirector:
-     - It accepts employee as an argument.
-     - It will be used as a type predicate and if the employee is a director.
-   - Write a function executeWork:
-     - It accepts employee as an argument.
-     - If the employee is a Director, it will call workDirectorTasks.
-     - If the employee is a Teacher, it will call workTeacherTasks.
-     - Expected result:
-       ```typescript
-       executeWork(createEmployee(200)); // Getting to work
-       executeWork(createEmployee(1000)); // Getting to director tasks
-       ```
+**Repo:**
 
-7. String literal types
-   - Write a String literal type named Subjects allowing a variable to have the value Math or History only.
-   - Write a function named teachClass:
-     - It takes todayClass as an argument.
-     - It will return the string Teaching Math if todayClass is Math.
-     - It will return the string Teaching History if todayClass is History.
-     - Expected result:
-       ```typescript
-       teachClass('Math'); // Teaching Math
-       teachClass('History'); // Teaching History
-       ```
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: 
+  - `task_0/js/main.ts`
+  - `task_0/package.json`
+  - `task_0/.eslintrc.js`
+  - `task_0/tsconfig.json`
+  - `task_0/webpack.config.js`
 
-8. Ambient Namespaces
-   - Create a directory called task_3 and copy these configuration files into it: package.json, webpack.config.js, tsconfig.json.
-   - The first part of will require that you build an interface and a type. Inside a file named interface.ts:
-     - Create a type RowID and set it equal to number.
-     - Create an interface RowElement that contains these 3 fields:
-       - firstName: string
-       - lastName: string
-       - age?: number
-   - You are building the next part of the application architecture. The goal is to save the entities to a database. Because of time constraints, you can’t write a connector to the database, and you decided to download a library called crud.js. Copy this file into the task_3/js directory.
-     - Here it is:
-       ```javascript
-       export function insertRow(row) {
-         console.log('Insert row', row);
-         return Math.floor(Math.random() * Math.floor(1000));
-       }
-       export function deleteRow(rowId) {
-         console.log('Delete row id', rowId);
-         return;
-       }
-       export function updateRow(rowId, row) {
-         console.log(`Update row ${rowId}`, row);
-         return rowId;
-       }
-       ```
-   - Write an ambient file within task_3/js, named crud.d.ts containing the type declarations for each crud function. At the top of the file import RowID and RowElement from interface.ts.
-   - In main.ts:
-     - At the top of the file create a triple slash directive that includes all the dependencies from crud.d.ts.
-     - Import the RowID type and RowElement from interface.ts.
-     - Import everything from crud.js as CRUD.
-     - Create an object called row with the type RowElement with the fields set to these values:
-       - firstName: Guillaume
-       - lastName: Salva
-     - Create a const variable named newRowID with the type RowID and assign the value the insertRow command.
-     - Next, create a const variable named updatedRow with the type RowElement and update row with an age field set to 23.
-     - Finally, call the updateRow and deleteRow commands.
-     - Expected result:
-       ```javascript
-       const obj = {firstName: "Guillaume", lastName: "Salva"};
-       CRUD.insertRow(obj); // Insert row {firstName: "Guillaume", lastName: "Salva"}
-       
-       const updatedRow: RowElement = { firstName: "Guillaume", lastName: "Salva", age: 23 };
-       CRUD.updateRow(newRowID, updatedRow); // Update row 125 {firstName: "Guillaume", lastName: "Salva", age: 23}
-       
-       CRUD.deleteRow(125); // Delete row id 125
-       ```
 
-9. Namespace & Declaration merging
-   - Create a new directory task_4 and copy the above tsconfig.json and put this package.json in there:
-     ```json
-     {
-       "name": "task_4",
-       "version": "1.0.0",
-       "description": "",
-       "main": "index.js",
-       "scripts": {
-         "build": "webpack",
-         "test": "echo \"Error: no test specified\" && exit 1"
-       },
-       "keywords": [],
-       "author": "",
-       "license": "ISC",
-       "devDependencies": {
-         "@typescript-eslint/eslint-plugin": "^2.4.0",
-         "@typescript-eslint/parser": "^2.4.0",
-         "clean-webpack-plugin": "^3.0.0",
-         "fork-ts-checker-webpack-plugin": "^1.5.1",
-         "html-webpack-plugin": "^3.2.
 
-0",
-         "typescript": "^3.9.7",
-         "webpack": "^4.44.1",
-         "webpack-cli": "^3.3.12",
-         "webpack-dev-server": "^3.11.0"
-       }
-     }
+## 1: Let's build a Teacher interface
+
+**Mandatory:**
+
+1. Create a directory `task_1` and copy these configuration files into this folder:
+   - `package.json`
+   - `tsconfig.json`
+   - `webpack.config.js`
+
+2. Define the `Teacher` interface with the following attributes:
+   - `firstName` (string) and `lastName` (string). These two attributes should only be modifiable when a Teacher is first initialized.
+   - `fullTimeEmployee` (boolean) — this attribute should always be defined.
+   - `yearsOfExperience` (number) — this attribute is optional.
+   - `location` (string) — this attribute should always be defined.
+   - Add the possibility to add any attribute to the Object like `contract` (boolean) without specifying the name of the attribute.
+
+**Example:**
+
+```typescript
+const teacher3: Teacher = {
+  firstName: 'John',
+  fullTimeEmployee: false,
+  lastName: 'Doe',
+  location: 'London',
+  contract: false,
+};
+
+console.log(teacher3);
+```
+
+**Output:**
+
+```plaintext
+// should print
+// Object
+// contract: false
+// firstName: "John"
+// fullTimeEmployee: false
+// lastName: "Doe"
+// location: "London"
+```
+
+**Repo:**
+
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File:
+  - `task_1/js/main.ts`
+  - `task_1/webpack.config.js`
+  - `task_1/tsconfig.json`
+  - `task_1/package.json`
+
+
+## 2: Extending the Teacher class
+
+**Mandatory:**
+
+1. Write an interface named `Directors` that extends `Teacher`. It requires an attribute named `numberOfReports` (number).
+
+**Example:**
+
+```typescript
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+console.log(director1);
+```
+
+**Output:**
+
+```plaintext
+// should print
+// Object
+// firstName: "John"
+// fullTimeEmployee: true
+// lastName: "Doe"
+// location: "London"
+// numberOfReports: 17
+```
+
+**Repo:**
+
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_1/js/main.ts`
+
+
+## 3: Printing teachers
+
+**Mandatory:**
+
+1. Write a function `printTeacher`:
+   - It accepts two arguments: `firstName` and `lastName`.
+   - It returns the first letter of the `firstName` and the full `lastName`.
+
+**Example:**
+
+```typescript
+printTeacher("John", "Doe"); // -> J. Doe
+```
+
+2. Write an interface for the function named `printTeacherFunction`.
+
+**Repo:**
+
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_1/js/main.ts`
+
+
+## 4: Writing a class
+
+**Mandatory:**
+
+1. Write a Class named `StudentClass`:
+   - The constructor accepts `firstName` (string) and `lastName` (string) arguments.
+   - The class has a method named `workOnHomework` that returns the string `Currently working`.
+   - The class has a method named `displayName` that returns the `firstName` of the student.
+
+2. The constructor of the class should be described through an Interface.
+3. The class should be described through an Interface.
+
+**Requirements:**
+
+- You can reuse the Webpack configuration from the previous exercise to compile the code.
+- When running `npm run build`, no TypeScript error should be displayed.
+- Every variable should use TypeScript when possible.
+
+**Repo:**
+
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_1/js/main.ts`
+
+
+## 5: Advanced types Part 1
+
+**Mandatory:**
+
+1. Create the `DirectorInterface` interface with the 3 expected methods:
+   - `workFromHome()`: returning a string
+   - `getCoffeeBreak()`: returning a string
+   - `workDirectorTasks()`: returning a string
+
+2. Create the `TeacherInterface` interface with the 3 expected methods:
+   - `workFromHome()`: returning a string
+   - `getCoffeeBreak()`: returning a string
+   - `workTeacherTasks()`: returning a string
+
+3. Create a class `Director` that will implement `DirectorInterface`:
+   - `workFromHome` should return the string `Working from home`.
+   - `getCoffeeBreak` should return the string `Getting a coffee break`.
+   - `workDirectorTasks` should return the string `Getting to director tasks`.
+
+4. Create a class `Teacher` that will implement `TeacherInterface`:
+   - `workFromHome` should return the string `Cannot work from home`.
+   - `getCoffeeBreak` should return the string `Cannot have a break`.
+   - `workTeacherTasks` should return the string `Getting to work`.
+
+5. Create a function `createEmployee` with the following requirements:
+   - It can return either a `Director` or a `Teacher` instance.
+   - It accepts 1 argument: `salary` (either number or string).
+   - If `salary` is a number and less than 500 - it should return a new `Teacher`. Otherwise, it should return a `Director`.
+
+**Expected result:**
+
+```javascript
+console.log(createEmployee(200));      // Teacher
+console.log(createEmployee(1000));     // Director
+console.log(createEmployee('$500'));    // Director
+```
+
+**Repo:**
+
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_2/js/main.ts`, `task_2/webpack.config.js`, `task_2/tsconfig.json`, `task_2/package.json`
+
+
+## 6: Creating functions specific to employees
+
+**Mandatory:**
+
+1. Write a function `isDirector`:
+   - It accepts `employee` as an argument.
+   - It will be used as a type predicate to determine if the `employee` is a director.
+
+2. Write a function `executeWork`:
+   - It accepts `employee` as an argument.
+   - If the `employee` is a `Director`, it will call `workDirectorTasks`.
+   - If the `employee` is a `Teacher`, it will call `workTeacherTasks`.
+
+**Expected result:**
+
+```javascript
+executeWork(createEmployee(200));      // Getting to work
+executeWork(createEmployee(1000));     // Getting to director tasks
+```
+
+**Repo:**
+
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_2/js/main.ts`
+
+
+## 7: String literal types
+
+**Mandatory:**
+
+1. Write a string literal type named `Subjects` allowing a variable to have the value `Math` or `History` only.
+2. Write a function named `teachClass`:
+   - It takes `todayClass` as an argument.
+   - It will return the string `Teaching Math` if `todayClass` is `Math`.
+   - It will return the string `Teaching History` if `todayClass` is `History`.
+
+**Expected result:**
+
+```javascript
+teachClass('Math');      // Teaching Math
+teachClass('History');   // Teaching History
+```
+
+**Repo:**
+
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_2/js/main.ts`
+
+
+## 8: Ambient Namespaces
+
+**Mandatory:**
+
+1. Create a directory called `task_3` and copy the following configuration files into it: `package.json`, `webpack.config.js`, `tsconfig.json`.
+
+2. Inside a file named `interface.ts`:
+   - Create a type `RowID` and set it equal to `number`.
+   - Create an interface `RowElement` that contains these fields:
+     - `firstName: string`
+     - `lastName: string`
+     - `age?: number`
+
+3. You are building the next part of the application architecture. Since you can't write a connector to the database, you will download a library called `crud.js`. Copy this file into the `task_3/js` directory.
+
+   Here it is:
+   ```javascript
+   export function insertRow(row) {
+     console.log('Insert row', row);
+     return Math.floor(Math.random() * Math.floor(1000));
+   }
+
+   export function deleteRow(rowId) {
+     console.log('Delete row id', rowId);
+     return;
+   }
+
+   export function updateRow(rowId, row) {
+     console.log(`Update row ${rowId}`, row);
+     return rowId;
+   }
+   ```
+
+4. Write an ambient file within `task_3/js`, named `crud.d.ts`, containing the type declarations for each CRUD function. At the top of the file, import `RowID` and `RowElement` from `interface.ts`.
+
+5. In `main.ts`:
+   - At the top of the file, create a triple slash directive that includes all the dependencies from `crud.d.ts`.
+   - Import the `RowID` type and `RowElement` from `interface.ts`.
+   - Import everything from `crud.js` as `CRUD`.
+   - Create an object called `row` with the type `RowElement` with the fields set to these values:
+     ```javascript
+     firstName: 'Guillaume',
+     lastName: 'Salva'
      ```
-   - Create a file called subjects.ts inside the task_4/js directory:
-     - Create an interface named Teacher that has two properties firstName and lastName.
-     - Create a namespace named Subjects with two variables Math and History.
-     - Create a function named getSubject that takes a subject as a parameter and return the teacher's subject.
-   - Then, you will need to create a second file named main.ts. 
-     - In main.ts, import everything from the subjects.ts file.
-     - Use the getSubject function to return the subject for the teacher and console.log it.
 
-10. Update Main
-    - Create a new file main.ts inside the task_4/js directory.
-      - Import the Teachers and Subjects you just created.
-      - Create constants for each subject, e.g., const math: Teacher = { firstName: 'John', lastName: 'Doe' };
-      - Call the getSubject function with each teacher's subject and console.log the results.
-      - Expected result:
-        ```javascript
-        console.log(getSubject(Subjects.Math)); // Returns teacher for Math
-        console.log(getSubject(Subjects.History)); // Returns teacher for History
-        ```
+6. Create a const variable named `newRowID` with the type `RowID` and assign the value from the `insertRow` command.
 
-11. Brand Convention & Nominal Typing
-    - Create a new directory called task_5 and copy the above tsconfig.json and put this package.json in there:
-      ```json
-      {
-        "name": "task_5",
-        "version": "1.0.0",
-        "description": "",
-        "main": "index.js",
-        "scripts": {
-          "build": "webpack",
-          "test": "echo \"Error: no test specified\" && exit 1"
-        },
-        "keywords": [],
-        "author": "",
-        "license": "ISC",
-        "devDependencies": {
-          "@typescript-eslint/eslint-plugin": "^2.4.0",
-          "@typescript-eslint/parser": "^2.4.0",
-          "clean-webpack-plugin": "^3.0.0",
-          "fork-ts-checker-webpack-plugin": "^1.5.1",
-          "html-webpack-plugin": "^3.2.0",
-          "typescript": "^3.9.7",
-          "webpack": "^4.44.1",
-          "webpack-cli": "^3.3.12",
-          "webpack-dev-server": "^3.11.0"
-        }
-      }
-      ```
-    - Create a file named main.ts inside the task_5/js directory:
-      - Create an interface named MajorCredits with a property credits(number).
-      - Create an interface named MinorCredits with a property credits(number).
-      - Create a function named sumCredits that takes a MajorCredits and MinorCredits objects and returns the sum of credits.
-      - Implement nominal typing using a brand convention.
-      - Expected result:
-        ```typescript
-        const major: MajorCredits = { credits: 10 };
-        const minor: MinorCredits = { credits: 5 };
-        const totalCredits = sumCredits(major, minor); // 15
-        ```
+7. Create a const variable named `updatedRow` with the type `RowElement` and update `row` with an `age` field set to `23`.
+
+8. Finally, call the `updateRow` and `deleteRow` commands.
+
+**Expected result:**
+
+```javascript
+const obj = {firstName: "Guillaume", lastName: "Salva"};
+CRUD.insertRow(obj);
+// Insert row {firstName: "Guillaume", lastName: "Salva"}
+
+const updatedRow: RowElement = { firstName: "Guillaume", lastName: "Salva", age: 23 };
+CRUD.updateRow(newRowID, updatedRow);
+// Update row 125 {firstName: "Guillaume", lastName: "Salva", age: 23}
+
+CRUD.deleteRow(125);
+// Delete row id 125
+```
+
+**Requirements:**
+- When running `npm run build`, no TypeScript error should be displayed.
+- Every variable should use TypeScript when possible.
+- The main file and the ambient file should both import the types defined in the interface file.
+- You can easily test your ambient file by checking the IntelliSense of your IDE when using the third-party functions.
+
+**Repo:**
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_3/js/main.ts`, `task_3/js/interface.ts`, `task_3/js/crud.d.ts`
+
+## 9: Namespace & Declaration Merging
+
+**Mandatory:**
+
+1. Create a new directory `task_4` and copy the above `tsconfig.json` into it. Use the following `package.json` in the directory:
+
+   ```json
+   {
+     "name": "task_4",
+     "version": "1.0.0",
+     "description": "",
+     "main": "index.js",
+     "scripts": {
+       "build": "webpack",
+       "test": "echo \"Error: no test specified\" && exit 1"
+     },
+     "keywords": [],
+     "author": "",
+     "license": "ISC",
+     "devDependencies": {
+       "@typescript-eslint/eslint-plugin": "^2.4.0",
+       "@typescript-eslint/parser": "^2.4.0",
+       "clean-webpack-plugin": "^3.0.0",
+       "fork-ts-checker-webpack-plugin": "^1.5.1",
+       "html-webpack-plugin": "^3.2.0",
+       "ts-loader": "^6.2.0",
+       "typescript": "^3.6.4",
+       "webpack": "^4.41.2",
+       "webpack-cli": "^3.3.9",
+       "webpack-dev-server": "^3.8.2"
+     }
+   }
+   ```
+
+2. In `task_4/js/subjects`, create the following files:
+
+   - **Teacher.ts**: Write a `Teacher` interface in a namespace named `Subjects`.
+     - The interface requires `firstName` and `lastName` as `string`.
+
+   - **Subject.ts**: Write a `Subject` class in the same namespace named `Subjects`.
+     - The class has one attribute `teacher` that implements the `Teacher` interface.
+     - The class has one setter method `setTeacher` that accepts a teacher as an argument and sets the instance attribute `teacher` with it.
+
+   - **Cpp.ts**: Make the following modifications in the same namespace:
+     - Using declaration merging, add a new optional attribute `experienceTeachingC` (number) to the `Teacher` interface.
+     - Create a class `Cpp` extending from `Subject`.
+     - Write a method named `getRequirements` that returns a string "Here is the list of requirements for Cpp".
+     - Write a method named `getAvailableTeacher` that returns a string "Available Teacher: <first name of teacher>". If the teacher doesn’t have any experience in teaching C, then the method should return a string "No available teacher".
+
+   - **React.ts**: Write a `React` class in the same namespace.
+     - Add a new attribute `experienceTeachingReact?` (number) to the `Teacher` interface.
+     - In the class, write a method named `getRequirements` that returns a string "Here is the list of requirements for React".
+     - Write a method named `getAvailableTeacher` that returns a string "Available Teacher: <first name of teacher>". If the teacher doesn’t have any experience in teaching React, then the method should return a string "No available teacher".
+
+   - **Java.ts**: Write a `Java` class in the same namespace.
+     - Add a new attribute `experienceTeachingJava?` (number) to the `Teacher` interface.
+     - In the class, write a method named `getRequirements` that returns a string "Here is the list of requirements for Java".
+     - Write a method named `getAvailableTeacher` that returns a string "Available Teacher: <first name of teacher>". If the teacher doesn’t have any experience in teaching Java, then the method should return a string "No available teacher".
+
+**Repo:**
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- Files:
+  - `task_4/package.json`
+  - `task_4/tsconfig.json`
+  - `task_4/js/subjects/Cpp.ts`
+  - `task_4/js/subjects/Java.ts`
+  - `task_4/js/subjects/React.ts`
+  - `task_4/js/subjects/Subject.ts`
+  - `task_4/js/subjects/Teacher.ts`
+
+
+## 10: Update `task_4/js/main.ts`
+
+**Mandatory:**
+
+1. Create and export the following constants:
+   - `cpp` for Cpp Subjects
+   - `java` for Java Subjects
+   - `react` for React Subjects
+
+2. Create and export one `Teacher` object named `cTeacher` with `experienceTeachingC = 10`.
+
+3. For the Cpp subject:
+   - Log to the console "C++".
+   - Set `cTeacher` as the teacher.
+   - Call the two methods `getRequirements` and `getAvailableTeacher`, and print the strings they return.
+
+4. For the Java subject:
+   - Log to the console "Java".
+   - Set `cTeacher` as the teacher.
+   - Call the two methods `getRequirements` and `getAvailableTeacher`, and print the strings they return.
+
+5. For the React subject:
+   - Log to the console "React".
+   - Set `cTeacher` as the teacher.
+   - Call the two methods `getRequirements` and `getAvailableTeacher`, and print the strings they return.
+
+**Repo:**
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_4/js/main.ts`
+
+
+## 11: Brand Convention & Nominal Typing
+
+**Mandatory:**
+
+1. Create a directory named `task_5` and copy the following configuration files into the root of `task_5`:
+   - `package.json`
+   - `tsconfig.json`
+   - `webpack.config.js`
+
+2. Create two interfaces in `task_5/js/main.ts`:
+   - `MajorCredits`: Defines a number named `credits` and includes a brand property to uniquely identify it.
+   - `MinorCredits`: Defines a number named `credits` and includes a brand property to uniquely identify it.
+
+3. Create two functions in `task_5/js/main.ts`:
+   - `sumMajorCredits`: This function takes two arguments, `subject1` and `subject2`, and returns a `MajorCredits` value by summing the credits of the two subjects.
+   - `sumMinorCredits`: This function takes two arguments, `subject1` and `subject2`, and returns a `MinorCredits` value by summing the credits of the two subjects.
+
+**Repo:**
+- GitHub repository: `alx-backend-javascript`
+- Directory: `0x04-TypeScript`
+- File: `task_5/js/main.ts`, `task_5/package.json`, `task_5/webpack.config.js`, `task_5/tsconfig.json`
