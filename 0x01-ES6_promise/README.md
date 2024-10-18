@@ -8,8 +8,7 @@
 
 ## Description
 
-This project focuses on understanding and implementing JavaScript ES6 Promises. It covers the creation, handling, and chaining of promises, along with error handling using `try/catch` and async/await syntax. By completing this project, you'll gain practical experience with asynchronous programming in JavaScript and be able to explain the concept of Promises, their usage, and their benefits in asynchronous programming.
-
+This project focuses on understanding and working with JavaScript ES6 Promises. It covers how to create promises, handle them, and chain them together. It also covers error handling using `try/catch` and the async/await syntax. By the end of this project, you'll have hands-on experience with asynchronous programming in JavaScript. You'll also be able to explain what Promises are, how to use them, and why they are useful for handling asynchronous tasks.
 
 ## Project Structure
 
