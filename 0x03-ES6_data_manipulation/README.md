@@ -8,7 +8,7 @@
 [![Backend Development](https://img.shields.io/badge/Backend%20Development-Node.js%20%2B%20ES6-orange)](https://www.backend-development.com/)
 ## Description
 
-This project consists of several tasks to practice data manipulation techniques in JavaScript using ES6 features, by implementing functions that utilize arrays, maps, sets, and typed arrays.
+This project consists of several tasks designed to help you practice data manipulation techniques in JavaScript.You'll work with ES6 features such as arrays, maps, sets, and typed arrays by implementing functions that use these structures. The tasks are designed to increase your understanding of how these data types work and how to manipulate them effectively.
 
 ## Project Structure
 
