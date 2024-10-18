@@ -304,7 +304,23 @@ To test your functions, follow these steps:
 
 ---
 
+## Additional Notes
 
+1. **Arrays**: 
+   - Arrays are ordered collections of elements, where each element is stored at a specific index. They can hold multiple values, and you can perform operations like adding, removing, or accessing elements using their index.
+   - Example: `let arr = [1, 2, 3];`
+
+2. **Maps**:
+   - Maps are collections of key-value pairs, where each key is unique. Unlike objects, map keys can be of any type, including functions, objects, or any primitive type.
+   - Example: `let map = new Map(); map.set('key', 'value');`
+
+3. **Sets**:
+   - Sets are collections of unique values, meaning no duplicates are allowed. They can hold any type of value, and are useful when you need to store distinct elements.
+   - Example: `let set = new Set([1, 2, 3]);`
+
+4. **Typed Arrays**:
+   - Typed arrays are arrays that store data in a specific binary format, allowing you to work efficiently with binary data like that from buffers, or when interacting with low-level data formats such as those used in WebGL.
+   - Example: `let typedArray = new Uint8Array([1, 2, 3]);`
 
 ## Tasks
 
@@ -648,7 +664,3 @@ bob@dylan:~$
 **File:** `100-weak.js`
 ```
 ```
-
-## Additional Notes
-- Ensure you understand how to manipulate data structures in ES6.
-- Pay attention to the requirements and constraints for each task.
